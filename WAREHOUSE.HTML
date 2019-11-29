@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<title>STORAGE AREA</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+body {font-family: "Times New Roman", Georgia, Serif;}
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Playfair Display";
+  letter-spacing: 5px;
+}
+</style>
+<body>
+
+
+
+<!-- Page content -->
+<div class="w3-content" style="max-width:1100px">
+
+  <!-- About Section -->
+  <div class="w3-row w3-padding-64" id="about">
+    <div class="w3-col m6 w3-padding-large w3-hide-small">
+     <img src="a.jpg" class="w3-round w3-image w3-opacity-min" alt="Table Setting" width="600" height="750">
+    </div>
+
+    <div class="w3-col m6 w3-padding-large"></div>
+      <h1 class="w3-center">Why The Need of Godown</h1><br>
+      <p class="w3-large"> Indian agriculture has grown considerably over the years. With this development, increasing infrastructure requirements have always been concern of every government. Though the sector has always been given priority status, a remarkable change in the life of Indian peasant (especially small and marginal) is yet to witness. Many reasons can be assigned for the ill development of Indian farmers, but the most important which one can identify is farmer’s inability to make use of time advantage of its produce. Most of the farmers grow the crop, harvest and sells quickly without waiting for favourable market condition. Perhaps farmers knows that the prices of their produce goes up after a period of time, the urgency of cash need forces them to sell the produce at an unfavourable price.</p>
+    </div>
+  </div>
+  <h2>STORAGE AREA AND TYPE</h2>
+  <p>CHOOSE DISTRICT AMONG FOLLOWING</p>
+
+  <select id="change_chart" onchange="drawStuff()">
+        <option selected="selected">SELECT DISTRICT AND TYPE </option>
+        <option value="1" >MORENA AND HOT</option>
+        <option value="2">MORENA AND COLD</option>
+        <option value="3">GWALIOR AND HOT</option>
+    </select>
+    <p>
+            <select id="city">
+                <option selected="selected">NAME AND CONTACT</option>
+            </select>
+    </p>
+    <script type="text/javascript">
+        function drawStuff()
+        {
+            var WHEAT=["Ramnath/987654321"];
+            var PADDY=["Prishtina/858234962"];
+            var MAIZE=["Berlin/827654721"];
+            var countries=document.getElementById("change_chart");
+            var cities=document.getElementById("city");
+            var selected=countries.value;
+            var html='<option selected="selected">NAME/CONTACT</option>';
+            if(selected === "1")
+            {
+                for(var i=0; i < WHEAT.length; i++)
+                {
+                    html+='<option value="' + WHEAT[i] + '">' + WHEAT[i] + '</option>';
+                }
+            }
+            else if(selected === "2")
+            {
+                for(var j=0; j < PADDY.length; j++)
+                {
+                    html+='<option value="' + PADDY[j] + '">' + PADDY[j] + '</option>';
+                }
+            }
+            else if(selected === "3")
+            {
+                for(var k=0; k < MAIZE.length; k++)
+                {
+                    html+='<option value="' + MAIZE[k] + '">' + MAIZE[k] + '</option>';
+                }
+            }
+            cities.innerHTML=html;
+        }
+    </script>
+</body>
+</html>
+
+  
