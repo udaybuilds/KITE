@@ -1,0 +1,86 @@
+<html>
+
+<head>
+<script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.dev.js"></script>
+<script>
+var socket=io();
+</script>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <meta name="description" content="Login - Register Template">
+    <meta name="author" content="Lorenzo Angelino aka MrLolok">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        body {
+            background-color: #303641;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container-login">
+        <div id="title">
+            <i class="material-icons lock">lock</i> Login
+        </div>
+
+        <form action="">
+            <div class="input">
+                <div class="input-addon">
+                    <i class="material-icons">CONTACT</i>
+                </div>
+                <input id="username" placeholder="" type="text" required class="validate" autocomplete="off">
+            </div>
+
+            <div class="clearfix"></div>
+
+            <div class="input">
+                <div class="input-addon"
+                    <i class="material-icons">PASSWORD</i>
+                </div>
+                <input id="Password" placeholder="DOB(dd/mm/yy)" type="password" required class="validate" autocomplete="off">
+            </div>
+
+            <div class="remember-me">
+                <input type="checkbox">
+                <span style="color: #DDD">Remember Me</span>
+            </div>
+
+            <input onclick="function1()" type="submit" id ="login" value="Log In" />
+        </form>
+
+        <div class="forgot-password">
+            <a href="#">Forgot your password?</a>
+        </div>
+        <div class="privacy">
+            <a href="#">Privacy Policy</a>
+        </div>
+
+        <div class="register">
+            Don't have an account yet?
+            <a href="#"><button id="register-link">Register here</button></a>
+        </div>
+    </div>
+    <script>
+    function function1(){
+	//alert("just click");
+    na=$("#username").val();
+       pass=$("#Password").val();
+       socket.emit("verify",{
+           name:na,
+           pass:pass,
+       });
+};
+socket.on("verified",function(data){
+           window.location="HOME.html";
+       });
+	   socket.on("trya",function(data){
+	   alert("Wrong Password or Username!!!!!!!!!!!!!!!!! \n Retry");
+	   window.location="login.html";
+	   });
+    </script>
+</body>
+
+</html>

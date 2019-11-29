@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Sell</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+/* Style the header */
+.header {
+  background-color: #f1f1f1;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Style the top navigation bar 
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+*/
+
+/* Style the topnav links 
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}*/
+
+/* Change color on hover 
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}*/
+
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 15px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width:600px) {
+  .column {
+    width: 100%;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>SELLING SECTION</h1>
+  <p>PORTAL TO SELL CROPS </p>
+</div>
+
+<!--<div class="topnav">
+  <a href="#">Link</a>
+  <a href="#">Link</a>
+  <a href="#">Link</a>
+</div>-->
+
+<div class="row">
+  <div class="column">
+    <h2>CROP SELL</h2>
+    <p>CHOOSE FROM FOLLOWING GOODS</p>
+    <form action="/action_page.php"></form>
+    <p>
+        
+            <select id="country" onchange="update()">
+            <option selected="selected">SELECT THE GOODS</option>
+            <option value="1">WHEAT</option>
+            <option value="2">PADDY</option>
+            <option value="3">MAIZE</option>
+            </select>
+            </form>
+    </p>
+  
+    </form>
+
+   
+  </div>
+  
+  <div class="column">
+    <h2>PRICE RANGE</h2>
+    <p>SELECT THE PRICE RANGE YOU WANT TO SELL</p>
+    <p> <select id="city">
+        <option selected="selected">SELECT PRICE RANGE</option>
+    </select>
+    </p>
+    <form action="/action_page.php"></form>
+    <script type="text/javascript">
+        function update()
+        {
+            var SEEDS=["WHEAT", "FERTILIZER", "RICE"];
+            var PESTICIDE=["4000-6000", "3000-5000", "8000-9000" ];
+            var FERTILIZER=["1100-2000", "2000-4000", "9000-10000"];
+            var countries=document.getElementById("country");
+            var cities=document.getElementById("city");
+            var selected=countries.value;
+            var html='<option selected="selected">SELECT PRICE RANGE</option>';
+            if(selected === "1")
+            {
+                for(var i=0; i < SEEDS.length; i++)
+                {
+                    html+='<option value="' + SEEDS[i] + '">' + SEEDS[i] + '</option>';
+                }
+            }
+            else if(selected === "2")
+            {
+                for(var j=0; j < PESTICIDE.length; j++)
+                {
+                    html+='<option value="' + PESTICIDE[j] + '">' + PESTICIDE[j] + '</option>';
+                }
+            }
+            else if(selected === "3")
+            {
+                for(var k=0; k < FERTILIZER.length; k++)
+                {
+                    html+='<option value="' + FERTILIZER[k] + '">' + FERTILIZER[k] + '</option>';
+                }
+            }
+            cities.innerHTML=html;
+        }
+    </script>
+     
+    </form>
+    
+  </div>
+  
+  <div class="column">
+    <h2>QUANTITY SECTION</h2>
+    <p>HOW MUCH QUANTITY TO SELL</p>
+
+<form >
+      <label for="QUANTITY">QUANTITY [IN KILOGRAMS]</label>
+      <input type="text" id="QUANTITY" name="QUANTITY" value="1">
+    <br><br>
+  <input type="submit">
+</form>
+  </div>
+</div>
+
+</body>
+</html>

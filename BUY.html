@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Buy And Sell</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+/* Style the header */
+.header {
+  background-color: #f1f1f1;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Style the top navigation bar 
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+*/
+
+/* Style the topnav links 
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}*/
+
+/* Change color on hover 
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}*/
+
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 15px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width:600px) {
+  .column {
+    width: 100%;
+  }
+}
+.footer {
+  background-color: #f1f1f1;
+  padding: 10px;
+  text-align: center;
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>BUYING SECTION</h1>
+  <p>PORTAL TO BUY SEEDS PESTICIDE FERTILIZER AND OTHER NECESSITIES TO FARM </p>
+</div>
+
+<!--<div class="topnav">
+  <a href="#">Link</a>
+  <a href="#">Link</a>
+  <a href="#">Link</a>
+</div>-->
+
+<div class="row">
+  <div class="column">
+    <h2>NECESSITY TO BUY SECTION</h2>
+    <p>CHOOSE FROM FOLLOWING GOODS</p>
+    <form action="/action_page.php"></form>
+    <p>
+        
+            <select id="country" onchange="update()">
+            <option selected="selected">SELECT THE GOODS</option>
+            <option value="1">SEEDS</option>
+            <option value="2">PESTICIDE</option>
+            <option value="3">FERTILIZER</option>
+            </select>
+            </form>
+    </p>
+    <input type="submit">
+    </form>
+
+   
+  </div>
+  
+  <div class="column">
+    <h2>PRICE RANGE</h2>
+    <p>SELECT THE PRICE RANGE YOU WANT TO SELL</p>
+    <p> <select id="city">
+        <option selected="selected">SELECT PRICE RANGE</option>
+    </select>
+    </p>
+    <form action="/action_page.php"></form>
+    <script type="text/javascript">
+        function update()
+        {
+            var SEEDS=["WHEAT", "FERTILIZER", "RICE"];
+            var PESTICIDE=["Atrazine", "Fluridone", "Metolachlor" ];
+            var FERTILIZER=["Ammonium Chloride", "Calcium Ammonium Nitrate (25% N)", "Anhydrous Ammonia"];
+            var countries=document.getElementById("country");
+            var cities=document.getElementById("city");
+            var selected=countries.value;
+            var html='<option selected="selected">SELECT THE OPTION BELOW</option>';
+            if(selected === "1")
+            {
+                for(var i=0; i < SEEDS.length; i++)
+                {
+                    html+='<option value="' + SEEDS[i] + '">' + SEEDS[i] + '</option>';
+                }
+            }
+            else if(selected === "2")
+            {
+                for(var j=0; j < PESTICIDE.length; j++)
+                {
+                    html+='<option value="' + PESTICIDE[j] + '">' + PESTICIDE[j] + '</option>';
+                }
+            }
+            else if(selected === "3")
+            {
+                for(var k=0; k < FERTILIZER.length; k++)
+                {
+                    html+='<option value="' + FERTILIZER[k] + '">' + FERTILIZER[k] + '</option>';
+                }
+            }
+            cities.innerHTML=html;
+        }
+    </script>
+     <input type="submit">
+    </form>
+    
+  </div>
+  
+  <div class="column">
+        <h2>QUANTITY SECTION</h2>
+        <p>HOW MUCH QUANTITY TO SELL</p>
+        <input type="text" id="quant"></input>
+        <br/>
+        <br/>
+        <input type="button" OnClick="validate_usn()" value="submit"/>
+        <input type="reset" value="reset"/>
+    </div>
+    <script type="text/javascript">
+        function validate_usn()
+        {
+        alert("Your item is under review ")  
+        }
+    </script>
+    
+    <div class="footer">
+            <p>THE ITEM  PRICE WILL BE DECIDED AFTER REVIEWING YOUR GOOD QUALITY AND YOU QUANTITY SELECTED</p>
+          </div>
+            
+  
+</body>
+</html>
