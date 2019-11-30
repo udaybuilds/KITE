@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>SIGNUP</title>
+<link href="front1.css" rel="stylesheet">
+</head>
+<body>
+<script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.dev.js"></script>
+<script>
+var socket = io();
+function function1(){
+    var mob =prompt("Enter you mobile no");
+var randm=Math.floor(Math.random() * (10000 - 1000)) + 1000;
+socket.emit("verifymob",{randm:randm,mob:mob});
+socket.on("sent",function(){
+   var code=prompt("Enter the code");
+   socket.emit("confirm",code);
+   socket.on("redirect",function(data){
+   });
+   function2();
+   function function2(){
+       window.location = "cred.html";
+   };
+});
+};
+</script>
+<form id="f1" >
+<table id="t2">
+<tr style="background:white">
+<td><img id="i1" src="mob.jpg"><td>
+<td><button id="b3" onclick="function1()">SIGNUP USING MOBILE NO</button></td>
+</tr>
+<tr style="background:white">
+<td><img id="i1" src="fb.png"><td>
+<td><button id="b4" onclick="window.location.href = 'fb.html';">SIGNUP USING FACEBOOK</button></td>      <!"window.location.href = 'fb.html';">
+</tr>
+<tr style="background:white">
+<td><img id="i1" src="g.jpg"><td>
+<td><button id="b5" onclick="function1()" >SIGNUP USING GMAIL</button></td>
+</tr>
+</table>
+</form>
+</body>
+</html>
