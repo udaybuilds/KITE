@@ -1,0 +1,25 @@
+{
+  "name": "kite",
+  "version": "1.0.0",
+  "description": "A web application that helps farmers starting from seed purchse to selling of crops",
+  "main": "kite.js",
+  "scripts": {
+    "test": "node kite.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/udaybuilds/KITE.git"
+  },
+  "author": "Uday",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/udaybuilds/KITE/issues"
+  },
+  "homepage": "https://github.com/udaybuilds/KITE#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongodb": "^3.5.5",
+    "nexmo": "^2.6.0",
+    "socket.io": "^2.3.0"
+  }
+}
