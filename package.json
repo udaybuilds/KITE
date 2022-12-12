@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/udaybuilds/KITE#readme",
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "mongodb": "^3.5.5",
     "nexmo": "^2.6.0",
     "socket.io": "^2.3.0"
